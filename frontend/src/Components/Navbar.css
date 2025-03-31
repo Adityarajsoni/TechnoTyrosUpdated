@@ -1,0 +1,120 @@
+/* Navbar Styling */
+.navbar {
+  width: 100%;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.navbar-logo {
+  flex: 1; /* Push everything else to center */
+}
+
+.logo {
+  height: 40px;
+}
+
+/* Centered Navigation Links */
+.navbar-links {
+  flex: 2; /* Ensures center alignment */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #4f46e5; /* Indigo hover */
+}
+
+/* Right-aligned Auth Buttons */
+.navbar-auth {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.signup {
+  font-weight: bold;
+  color: #4f46e5;
+}
+
+/* Logout Button */
+.logout {
+  background: none;
+  border: none;
+  color: red;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.logout:hover {
+  color: darkred;
+}
+
+/* Mobile Menu */
+.menu-button {
+  display: none;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .navbar-links,
+  .navbar-auth {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mobile-link {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    display: block;
+  }
+
+  .mobile-link:hover {
+    background: #f3f3f3;
+  }
+}

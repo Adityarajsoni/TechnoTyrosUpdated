@@ -1,0 +1,351 @@
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+
+.question-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f6f8ff 0%, #e9f0ff 100%);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.main-title {
+  font-size: 2.5rem;
+  color: #2b3674;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.subtitle {
+  color: #707eae;
+  font-size: 1.1rem;
+}
+
+.question-card {
+  flex: 1;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+}
+
+.controls-section {
+  background: #f8faff;
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  height: fit-content;
+}
+
+.difficulty-section {
+  margin-bottom: 2rem;
+}
+
+.difficulty-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #2b3674;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.difficulty-select {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s;
+  background: white;
+  cursor: pointer;
+}
+
+.difficulty-select:focus {
+  border-color: #4318FF;
+  box-shadow: 0 0 0 3px rgba(67, 24, 255, 0.1);
+}
+
+.feedback-message {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.generate-button {
+  width: 100%;
+  background: #4318FF;
+  color: white;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.generate-button:hover:not(:disabled) {
+  background: #3311cc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(67, 24, 255, 0.2);
+}
+
+.generate-button:disabled {
+  background: #a8b3cf;
+  cursor: not-allowed;
+}
+
+.question-display-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.question-display {
+  background: #f8faff;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 2px solid #e9ecef;
+  flex: 1;
+  position: relative;
+  max-height: 400px; /* Adjust based on preference */
+  overflow-y: auto;  /* Enables scrolling when content overflows */
+}
+
+.question-text {
+  font-size: 1.25rem;
+  color: #2b3674;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.feedback-section {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.feedback-button {
+  padding: 0.8rem 1.5rem;
+  border: 2px solid #e9ecef;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: white;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.feedback-button:hover:not(:disabled) {
+  border-color: #4318FF;
+  color: #4318FF;
+  transform: translateY(-2px);
+}
+
+.feedback-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  border: 2px solid #e9ecef;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4318FF;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: #707eae;
+  font-size: 0.9rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .question-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .controls-section {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .question-container {
+    padding: 1rem;
+  }
+  
+  .main-title {
+    font-size: 2rem;
+  }
+  
+  .question-card {
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ... (previous CSS remains the same) ... */
+
+.control-group {
+  margin-bottom: 1.5rem;
+}
+
+.control-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2b3674;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.control-select,
+.control-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e9ecef;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s;
+  background: white;
+}
+
+.control-input {
+  font-family: inherit;
+}
+
+.control-select:focus,
+.control-input:focus {
+  border-color: #4318FF;
+  box-shadow: 0 0 0 3px rgba(67, 24, 255, 0.1);
+}
+
+.control-input::placeholder {
+  color: #a0aec0;
+}
+
+/* Add animation for custom prompt section */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.control-group {
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Disabled button styles */
+.generate-button:disabled {
+  background: #a0aec0;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Question highlight for custom prompts */
+.question-text.custom-prompt {
+  background: rgba(67, 24, 255, 0.05);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid #4318FF;
+}
+
+
+
+/* Save Button */
+.save-button {
+  width: 100%;
+  background: #00c853;
+  color: white;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.save-button:hover:not(:disabled) {
+  background: #009624;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 200, 83, 0.2);
+}
+
+.save-button:disabled {
+  background: #a8b3cf;
+  cursor: not-allowed;
+}
