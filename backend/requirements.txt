@@ -1,0 +1,10 @@
+Flask
+flask-cors
+pymongo
+bcrypt
+pyjwt
+python-dotenv
+PyPDF2
+python-docx
+fpdf
+google-generativeai
