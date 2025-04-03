@@ -14,7 +14,7 @@ export default function Login() {
     setError('');
   
     try {
-      const res = await axios.post('http://localhost:8000/login', { email, password }, { withCredentials: true });
+      const res = await axios.post('https://technotyrosupdated.onrender.com/login', { email, password }, { withCredentials: true });  //http://localhost:8000/login
   
       if (res.status === 200) {
         localStorage.setItem('authToken', res.data.token);  // Store token
