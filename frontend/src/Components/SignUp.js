@@ -12,7 +12,7 @@ const SignUp = () => {
     e.preventDefault();
     
     try {
-      const response = await fetch("http://localhost:8000/signup", {
+      const response = await fetch("https://technotyrosupdated.onrender.com/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -26,7 +26,7 @@ const SignUp = () => {
         alert("Signup successful! Logging in...");
 
         // 🔹 Auto-login after signup
-        const loginResponse = await fetch("http://localhost:8000/login", {
+        const loginResponse = await fetch("https://technotyrosupdated.onrender.com/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password }),
