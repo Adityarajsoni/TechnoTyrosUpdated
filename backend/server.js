@@ -32,7 +32,7 @@ const User = mongoose.model("User", userSchema);
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "https://techno-tyros-updated.vercel.app"],
     credentials: true
 }));
 app.use(cookieParser());
