@@ -33,7 +33,7 @@ const QuestionGenerator = () => {
     formData.append('num_questions', numQuestions);
 
     try {
-      const response = await fetch('http://localhost:5000/api/generate-questions', {
+      const response = await fetch('https://technotyrosupdated-2.onrender.com/api/generate-questions', {        //http://localhost:5000/api/generate-questions
         method: 'POST',
         body: formData
       });
