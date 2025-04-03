@@ -4,7 +4,9 @@ import os
 from process_text import extract_text, generate_questions, save_as_txt, save_as_docx, save_as_pdf
 
 app = Flask(__name__)
-CORS(app)
+
+# Allow CORS for your frontend URL
+CORS(app, resources={r"/api/*": {"origins": "https://techno-tyros-updated.vercel.app"}})
 
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
