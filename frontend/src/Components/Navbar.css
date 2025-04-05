@@ -19,20 +19,16 @@
 }
 
 /* Logo */
-.navbar-logo {
-  flex: 1; /* Push everything else to center */
-}
-
-.logo {
+.navbar-logo .logo {
   height: 40px;
 }
 
-/* Centered Navigation Links */
+/* Navigation Links (Desktop) */
 .navbar-links {
-  flex: 2; /* Ensures center alignment */
   display: flex;
-  justify-content: center;
   gap: 20px;
+  flex: 2;
+  justify-content: center;
 }
 
 .nav-link {
@@ -44,15 +40,15 @@
 }
 
 .nav-link:hover {
-  color: #4f46e5; /* Indigo hover */
+  color: #4f46e5;
 }
 
-/* Right-aligned Auth Buttons */
+/* Authentication Section (Desktop) */
 .navbar-auth {
-  flex: 1;
   display: flex;
-  justify-content: flex-end;
   gap: 15px;
+  justify-content: flex-end;
+  flex: 1;
 }
 
 .signup {
@@ -60,7 +56,6 @@
   color: #4f46e5;
 }
 
-/* Logout Button */
 .logout {
   background: none;
   border: none;
@@ -74,12 +69,22 @@
   color: darkred;
 }
 
-/* Mobile Menu */
+/* Menu Button (Mobile Only) */
 .menu-button {
   display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
 }
 
-/* Responsive for Mobile */
+/* Icons */
+.icon {
+  height: 24px;
+  width: 24px;
+}
+
+/* Responsive Styling */
 @media (max-width: 768px) {
   .navbar-links,
   .navbar-auth {
@@ -88,33 +93,58 @@
 
   .menu-button {
     display: block;
-    background: none;
-    border: none;
-    cursor: pointer;
   }
 
   .mobile-menu {
     position: absolute;
     top: 60px;
     right: 20px;
+    width: 220px;
     background: white;
-    width: 200px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    z-index: 999;
+    animation: slideDown 0.3s ease;
+  }
+
+  .mobile-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .mobile-link {
-    text-decoration: none;
     color: black;
-    padding: 10px;
-    display: block;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.2s ease;
   }
 
   .mobile-link:hover {
-    background: #f3f3f3;
+    background-color: #f0f0f0;
+  }
+
+  .close-button {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+}
+
+/* Optional animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
